@@ -1,7 +1,8 @@
 cd %~dp0
-pdflatex ./diplom.tex > nul
-pdflatex ./diplom.tex > nul
 cd ./src/
-python3 correlation.bat
-cd ../presentation/
-call ./presentation/make.bat
+python correlations.py
+cd ../
+pdflatex ./diplom.tex > nul
+pdflatex ./diplom.tex > nul
+cd ./presentation/
+call ./make.bat
