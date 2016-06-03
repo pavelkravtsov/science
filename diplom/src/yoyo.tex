@@ -1,0 +1,47 @@
+\documentclass[12pt]{article}
+\topmargin -0.7in
+\oddsidemargin -0.21in
+\evensidemargin -0.21in
+\textwidth=17cm
+\textheight=25cm
+
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc} 
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{comment}
+
+\usepackage{tikz}
+\usepackage{graphicx}
+\graphicspath{{./}}
+\DeclareGraphicsExtensions{.png}
+
+\begin{document}
+Обычный текст здесь
+
+\begin{tikzpicture}
+% оси координат
+\draw[->] (-2, 0) coordinate (O) -- +(5, 0) node [right] {$z$};
+\draw[->] (O) -- +(0, 7) node [left] {$t$};
+% пунктирные прямые
+\draw[thick, dashed]
+(0, 0) coordinate (A) -- +(-45:.5) 
+(0, 0) -- +(-135:.5)
+(0, 0) -- ++(45:3) -- ++(135:2) coordinate (B) -- ++(225:3) -- +(315:2) ++(45:3)
+-- ++(45:3) -- ++(135:2) coordinate (C) -- ++(225:3) -- +(315:2) ++(45:3)
+ -- +(45:.5) 
+ +(0,0) -- +(135:.5);
+% гиперболы
+ \draw[thick]
+(A) .. controls +(50:2.8) .. (B)
+(A) .. controls +(130:1.85) .. (B)
+(B) .. controls +(50:2.8) .. (C)
+(B) .. controls +(130:1.85) .. (C)
+(A) -- +(-55:.4)
+(A) -- +(-125:.4)
+(C) -- +(125:.4)
+(C) -- +(55:.4);
+\end{tikzpicture}
+
+И здесь
+\end{document}

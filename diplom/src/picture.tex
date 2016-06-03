@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\topmargin -0.7in
+\oddsidemargin -0.21in
+\evensidemargin -0.21in
+\textwidth=17cm
+\textheight=25cm
+
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc} 
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{comment}
+
+\usepackage{tikz}
+\usepackage{graphicx}
+\graphicspath{{./}}
+\DeclareGraphicsExtensions{.png}
+
+\begin{document}
+Обычный текст здесь
+
+\begin{tikzpicture}
+% оси X, Y, Z
+\fill (1, 1) coordinate (O);
+\draw[thick, ->] (O) node [below] {$O$} -- +(90:1) node [right] {$x$};
+\draw[thick, ->] (O) node [below] {$O$} -- +(225:.5) node [left] {$y$};
+\draw[thick, ->] (O) node [below] {$O$} -- +(0:1) node [right] {$z$};
+
+%труба
+\draw[very thick, gray] (0, .5) -- ++(1.5, 0) ++(1.5, 0) -- ++(9, 0) ++(1.5, 0) -- ++(1.5, 0);
+\draw[very thick, gray, dashed] (1.5, .5) -- ++(1.5, 0) ++(9, 0) -- ++(1.5, 0);
+\draw[very thick, gray] (0, -.5) -- ++(1.5, 0) ++(1.5, 0) -- ++(9, 0) ++(1.5, 0) -- ++(1.5, 0);
+\draw[very thick, gray, dashed] (1.5, -.5) -- ++(1.5, 0) ++(9, 0) -- ++(1.5, 0);
+\draw[very thick, gray] (0, .5) arc (90:270:0.25 and 0.5);
+\draw[very thick, gray, densely dashed] (0, -.5) arc (270:450:0.25 and 0.5);
+\draw[very thick, gray] (15, 0) ellipse (0.25 and 0.5);
+
+% палочки между кварками
+\draw[ultra thick]
+(0.7, 0) coordinate (QM) -- +(-5:0.85)
+(4.5, -.2) coordinate (AQ1) -- +(177:1.6)
+(4.5, .2) coordinate (Q1) -- (7.5, .3) coordinate (AQ2)
+(7.5, -.3) coordinate (Q2) -- (10.5, .2) coordinate (AQ3)
+(10.5, -.2) coordinate (Q3) -- +(4:1.5)
+(14.55, 0) coordinate(AQN) -- +(176:1.1) ;
+
+% стрелочки
+\def\impangle{40}
+\draw[thick, ->] (Q1) -- +(\impangle :1.5) node [right] {$\vec{q_1}$};
+\draw[thick, ->] (AQ1) -- +(\impangle + 180:1.5) node [left] {$\vec{\bar{q_1}}$};
+\draw ++(Q1) -- +(90:1) +(\impangle:.5) arc (\impangle:90:.5) node [above right] {$\phi_1$};
+\def\impangle{-70}
+\draw[thick, ->] (Q2) -- +(\impangle :1.0) node [right] {$\vec{q_2}$};
+\draw[thick, ->] (AQ2) -- +(\impangle + 180:1.0) node [left] {$\vec{\bar{q_2}}$};
+\draw ++(Q2) -- +(90:1) +(\impangle:.5) arc (\impangle:90:.5) node [right] {$\ \phi_2$};
+\def\impangle{-30}
+\draw[thick, ->] (Q3) -- +(\impangle :2.0) node [right] {$\vec{q_3}$};
+\draw[thick, ->] (AQ3) -- +(\impangle + 180:2.0) node [left] {$\vec{\bar{q_3}}$};
+\draw ++(Q3) -- +(90:1) +(\impangle:.5) arc (\impangle:90:.5) node [right] {$\ \phi_3$};
+
+% кварки
+\draw[fill=gray] (QM) circle (0.15) node [left] {$\vec{q}_{-m}$};
+\draw[fill=white] (AQ1) circle (0.15);
+\draw[fill=gray] (Q1) circle (0.15);
+\draw[fill=white] (AQ2) circle (0.15);
+\draw[fill=gray] (Q2) circle (0.15);
+\draw[fill=white] (AQ3) circle (0.15);
+\draw[fill=gray] (Q3) circle (0.15);
+\draw[fill=white] (AQN) circle (0.15) node [right] {$\ \vec{\bar{q_n}}$};
+\end{tikzpicture}
+
+И здесь
+\end{document}
