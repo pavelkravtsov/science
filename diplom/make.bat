@@ -7,3 +7,4 @@ pdflatex ./diplom.tex > nul
 cd ./presentation/
 call ./make.bat
 cd ../
+texworks ./diplom.pdf ./presentation/presentation.pdf ./presentation/text.pdf
