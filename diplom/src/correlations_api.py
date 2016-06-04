@@ -14,6 +14,9 @@ def plot_theory_and_practice(x_list,
     dx = x_list[1] - x_list[0]
     practice = pylab.bar(x_list, practice_list, width = 0.7 * dx, align = "center", color="gray")
     theory = pylab.plot(x_list, theory_list, color="black", linewidth = 3)
+    x_length = 0.5 * (x_list[-1] - x_list[0])
+    x_center = 0.5 * (x_list[-1] + x_list[0])
+    xlim = pylab.xlim(x_center - x_length * 1.05, x_center + x_length * 1.05)
     ylim = pylab.ylim(0.0, pylab.ylim()[1] * 1.15)
     if string_name == r"p":
         xlabel_ = pylab.xlabel(r"$p/q_0$")
@@ -23,9 +26,9 @@ def plot_theory_and_practice(x_list,
     practice[0].set_label(u"Компьютерное вычисление")
     theory[0].set_label(u"Аналитическое выражение")
 
-    xlabel_.set_size(20)
-    ylabel_.set_rotation(1)
-    ylabel_.set_size(20)
+    xlabel_.set_size(30)
+    #ylabel_.set_rotation(1)
+    ylabel_.set_size(30)
     ylabel_.set_horizontalalignment("right")
     #pylab.show()
     pylab.legend()

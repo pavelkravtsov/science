@@ -149,6 +149,8 @@ for n in [10000, 100000]:
                             picture_name="gauss_alpha")
 
     ## LAPLACE
-    ##plot_alpha_distribution(calculate_function=partial(get_alpha_laplace, q0))
-    ##plot_momentum_distribution(calculate_function=partial(get_momentum_laplace, q0),
-    ##                           right_bound=4*q0*math.sqrt(2))
+##    plot_alpha_distribution(calculate_function=partial(get_alpha_laplace, q0),
+##                            picture_name="laplace_alpha")
+##    plot_momentum_distribution(calculate_function=partial(get_momentum_laplace, q0),
+##                               right_bound=4*q0*math.sqrt(2),
+##                               picture_name="laplace_momentum")
