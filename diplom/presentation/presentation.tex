@@ -40,7 +40,6 @@
 
 
 \title[]{Двухчастичные корреляции, возникающие при распаде одиночной струны}
-% \subtitle[]{Опциональный подзаголовок}
 % То, что в квадратных скобках, отображается в левом нижнем углу. 
 \institute[СПбГУ]{
 Санкт-Петербургский государственный университет \\
@@ -50,10 +49,10 @@
 \author[Кравцов Павел]{Кравцов Павел Сергеевич, 408 группа \\
   % У научного руководителя должна быть указана научная степень
   \and  
-    {\bfseries Научный руководитель:} д.ф.-м.н., профессор Вечернин В. В. \\ 
+    {\bfseries Научный руководитель:} д.ф.-м.н., профессор Вечернин Владимир Викторович \\ 
   % Для курсовой не обязателен. Должна быть указана должность или ученая степень
   \and
-    {\bfseries Рецензент:} к.ф.-м.н., ассистент Алцыбеев И. Г.}
+    {\bfseries Рецензент:} к.ф.-м.н., ассистент Алцыбеев Игорь Геннадьевич}
 
 \date{6 июня 2016г.}
 
@@ -72,29 +71,32 @@
 
 % цель работы
 \begin{frame}[fragile]
-    \frametitle{Цель работы}
+    \frametitle{Актуальность и цель работы}
     
-    \begin{minipage}[h]{0.48\linewidth}
-    \begin{figure}
-    \includegraphics[width=\linewidth]{main.png}
-    \caption{Распределение по разности быстрот $\Delta \eta$ и углу разлета $\Delta \phi$ частиц в процессе множественного рождения. График из \cite{exp_data}}
-    \label{main}
-    \end{figure}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[h]{0.48\linewidth}
+    \begin{minipage}[h]{0.38\linewidth}
     {\bfseries Цель работы: \\}
-    Объяснить задний хребет на рис.~\ref{main}. \\
+    Объяснить задний хребет. \\
     \vfill
-    $\Delta \eta$ - разноть быстрот частиц \\
-    $\Delta \phi$ - угол разлета (угол между поперечными импульсами частиц) \\
+    $\Delta \eta$ - разность быстрот частиц \\
+    $\Delta \phi$ - (азимутальный) угол разлета (угол между поперечными импульсами частиц) \\
     \vfill
     Определение быстроты:
     \begin{gather}
     \eta = ln \frac{1 + V_z}{1 - V_z},
+    \nonumber
     \end{gather}
     где $V_z$ - продольная скорость частицы.
+    \vfill
     \end{minipage}
+    \hfill
+    \begin{minipage}[h]{0.58\linewidth}
+    \begin{figure}
+    \includegraphics[width=\linewidth]{main.png}
+    \caption{Распределение по разности быстрот $\Delta \eta$ и углу разлета $\Delta \phi$ частиц в процессе множественного рождения.\footnotemark}
+    \label{main}
+    \end{figure}
+    \end{minipage}
+    \footnotetext{ALICE Сollaboration, arxiv:1307.3237 [nucl-ex] {\bfseries(2013)}.}
 \end{frame}
 
 % модель кварк-глюонной струны
@@ -199,7 +201,7 @@
     \frametitle{"Yo-yo" струна}
     \begin{center}
     ${\tiny
-    S = \gamma \int d\sigma \int d\tau \sqrt{\br{\frac{\pd x_\mu}{\pd \tau} \frac{\pd x^\mu}{\pd \sigma}}^2 - \br{\frac{\pd x_\mu}{\pd \sigma} \frac{\pd x^\mu}{\pd \sigma}} \br{\frac{\pd x_\nu}{\pd \tau} \frac{\pd x^\nu}{\pd \tau}}},
+    S = \gamma \int\limits_{\sigma_1}^{\sigma_2} d\sigma \rint d\tau \sqrt{\br{\frac{\pd x_\mu}{\pd \tau} \frac{\pd x^\mu}{\pd \sigma}}^2 - \br{\frac{\pd x_\mu}{\pd \sigma} \frac{\pd x^\mu}{\pd \sigma}} \br{\frac{\pd x_\nu}{\pd \tau} \frac{\pd x^\nu}{\pd \tau}}},
     }$
     \end{center}
     \begin{minipage}[h]{0.35\linewidth}
@@ -249,27 +251,29 @@
 % fragmentation
 \begin{frame}[fragile]
 \frametitle{Механизм фрагментации струны}
-\begin{minipage}[h]{0.48\linewidth}
+\begin{minipage}[h]{0.58\linewidth}
 \begin{figure}
-\center{\includegraphics[width=0.8\textwidth]{fragmentation.png}}
+\center{\includegraphics[width=1\textwidth]{fragmentation.png}}
 \caption{Доминирующий процесс фрагментации струны. 
-Все разрывы происходят с $S = S_0$. 
-Иллюстрация из \cite{fragmentation_lit}}
+Все разрывы происходят с $S = S_0$.\footnotemark}
 \label{fragmentation}
 \end{figure}
 \end{minipage}
+\footnotetext{V. V. Vechernin, arXiv: 0812.0604 [hep-ph].}
 \hfill
-\begin{minipage}[h]{0.48\linewidth}
+\begin{minipage}[h]{0.38\linewidth}
+% \begin{gather}
+% dP \br{S} = \frac{1}{S_0} \br{1 - P \br{S}} dS, \nonumber
+% \end{gather}
+Модель Артру-Менниссиера\footnotemark:
 \begin{gather}
-dP \br{S} = \frac{1}{S_0} \br{1 - P \br{S}} dS, \nonumber
+P \br{S} = 1 - exp \br{-\frac{S}{S_0}}, \nonumber
 \end{gather}
 где $S_0$ - параметр модели.
-\begin{gather}
-P \br{S} = 1 - exp \br{-\frac{S}{S_0}} \nonumber
-\end{gather}
 $$$$
-\center{\fbox{$\abs{\Delta \eta} \approx 1$}}
+\center{\fbox{Вывод: $\abs{\Delta \eta} \approx 1$}}
 \end{minipage}
+\footnotetext{X. Artru, Phys. Rep. 97, p.147 (1983).}
 \end{frame}
 
 % обзор по струнам
@@ -371,19 +375,19 @@ $$$$
 % const
 \begin{frame}[fragile]
 \frametitle{Константный случай}
-\begin{minipage}[h]{0.48\linewidth}
-Распределение импульсов кварков
-$$\rho_{q_i} \br{q} = \delta \br{q - q_0}$$
+\begin{minipage}[h]{0.53\linewidth}
+Распределение импульсов кварков:
+$$\rho_{q_i} \br{q} = \delta \br{q - q_0},$$
+где $q_0$ - параметр модели.
 $$$$
-$$$$
-Распределение импульсов мезонов
-$$\rho_p \br{p} = \frac{2}{\pi\sqrt{\br{2 q_0}^2 -p^2}}$$
-Распределение по углу разлета
-$$\rho_{\Delta \phi} \br{\Delta \phi} = \frac{\abs{\Delta \phi}}{\pi^2}, \Delta \phi \in \left[ -\pi, \pi \right]$$
+Распределение импульсов мезонов:
+$$\rho_p \br{p} = \frac{2}{\pi\sqrt{\br{2 q_0}^2 -p^2}}.$$
+Распределение по углу разлета:
+$$\rho_{\Delta \phi} \br{\Delta \phi} = \frac{\abs{\Delta \phi}}{\pi^2}, \Delta \phi \in \left[ -\pi, \pi \right].$$
 \end{minipage}
-\begin{minipage}[h]{0.48\linewidth}
-\center{\includegraphics[width=0.9\linewidth]{const_momentum_10000}}
-\center{\includegraphics[width=0.9\linewidth]{const_alpha_10000}}
+\begin{minipage}[h]{0.43\linewidth}
+\center{\includegraphics[width=1\linewidth]{const_momentum_10000}}
+\center{\includegraphics[width=1\linewidth]{const_alpha_10000}}
 \end{minipage}
 \end{frame}
 
@@ -391,16 +395,16 @@ $$\rho_{\Delta \phi} \br{\Delta \phi} = \frac{\abs{\Delta \phi}}{\pi^2}, \Delta 
 \begin{frame}[fragile]
 \frametitle{Гауссов случай}
 \begin{minipage}[h]{0.53\linewidth}
-Распределение импульсов кварков
-$$\rho_{q_i} \br{q} = \frac{q}{2 q_0^2} exp \br{-\frac{q^2}{q_0^2} }$$
+Распределение импульсов кварков:
+$$\rho_{q_i} \br{q} = \frac{q}{2 q_0^2} exp \br{-\frac{q^2}{q_0^2} }.$$
 $$$$
-Распределение импульсов мезонов
-$$\rho_p \br{p} = \frac{p \ e^{-\frac{p^2}{2q_0^2}}}{q_0^2} $$
-Распределение по углу разлета \\
-{\small
-$\rho_{\Delta \phi} \br{\Delta \phi} = \frac{3}{8 \pi} \frac{\sqrt{1 - \br{\gamma / 2}^2} - \br{\gamma / 2} \ arccos \br{\gamma / 2}}{\br{1 - \br{\gamma/2}^2}^{3/2}},$ \\
-$\quad \text{где} \ \gamma = cos \Delta \phi $
-}
+Распределение импульсов мезонов:
+$$\rho_p \br{p} = \frac{p \ e^{-\frac{p^2}{2q_0^2}}}{q_0^2}.$$
+Распределение по углу разлета: \\
+%{\small
+$$\rho_{\Delta \phi} \br{\Delta \phi} = \frac{3}{8 \pi} \frac{\sqrt{1 - \gamma^2} - \gamma \ arccos \gamma}{\br{1 - \gamma^2}^{3/2}},$$ \\
+$\quad \text{где} \ \gamma = \frac{cos \Delta \phi}{2}.$
+%}
 \end{minipage}
 \begin{minipage}[h]{0.43\linewidth}
 \center{\includegraphics[width=1\linewidth]{gauss_momentum_10000}}
@@ -441,7 +445,7 @@ $\quad \text{где} \ \gamma = cos \Delta \phi $
 \begin{minipage}[h]{0.48\linewidth}
 \begin{figure}
 \center{\includegraphics[width=1\textwidth]{main.png}}
-\caption{Экспирементальное распределение числа частиц по $\br{\Delta \eta, \Delta \phi}$  }
+\caption{Экспериментальное распределение числа частиц по $\br{\Delta \eta, \Delta \phi}$  }
 \end{figure}
 \end{minipage}
 \begin{minipage}[h]{0.48\linewidth}
@@ -483,10 +487,6 @@ A. Cappela, U. Sukhatme, Chung-I Tan, J. Tran Thanh Van, Phys. Rep. 236 p.225 (1
 Барбашов Б. М., Нестеренко В. В. Модель релятивистской струны в физике адронов, М.: Энергоиздат, 1987.
 \bibitem{schwinger}
 J. Schwinger, Phys. Rev. 82, p.664 (1951).
-\bibitem{artru}
-X. Artru, Phys. Rep. 97, p.147 (1983).
-\bibitem{fragmentation_lit}
-V. V. Vechernin, arXiv: 0812.0604 [hep-ph].
 \end{thebibliography}
 }
 \end{frame}
@@ -498,8 +498,6 @@ V. V. Vechernin, arXiv: 0812.0604 [hep-ph].
 \begin{thebibliography}{00}
 \bibitem{cappela}
 A. Capella, A. Krzywicki, Phys. Rev. D 18 p.4120 (1978).
-\bibitem{exp_data}
-{\bf ALICE} Collaboration, B. Abelev \textit{et al.}, arxiv:1307.3237 [nucl-ex].
 \bibitem{fusion1}
 M. A. Braun, C. Pajares, Phys. Lett. B 287, p.154 (1992).
 \bibitem{fusion2}
